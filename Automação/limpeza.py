@@ -1,0 +1,19 @@
+import os
+import shutil
+
+# Função para excluir as pastas "Temp", "Prefetch" e "%Temp%"
+def excluir_pastas():
+    temp_path = "C:\\Users\\SeuUsuario\\AppData\\Local\\Temp"  # Substitua "SeuUsuario" pelo seu nome de usuário
+    prefetch_path = "C:\\Windows\\Prefetch"
+    temp_env_path = os.environ.get('TEMP')
+
+    try:
+        shutil.rmtree(temp_path)
+        shutil.rmtree(prefetch_path)
+        shutil.rmtree(temp_env_path)
+        print("Pastas excluídas com sucesso!")
+    except Exception as e:
+        print("Ocorreu um erro ao excluir as pastas:", str(e))
+
+# Chamada da função para excluir as pastas
+excluir_pastas()
