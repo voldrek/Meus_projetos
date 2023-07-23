@@ -21,6 +21,39 @@ from tkinter import *
 #"lightyellow" (amarelo claro)
 #"lightgray" (cinza claro)
 
+#Fontes padrão:
+
+#"TkDefaultFont" (fonte padrão do Tkinter)
+#"Helvetica" (ou "TkTextFont" ou "TkFixedFont" dependendo do sistema)
+#Fontes serif:
+
+#"Times" ou "Times New Roman" (fonte serif padrão)
+#"Courier" (fonte monoespaçada serif)
+#"Georgia"
+#Fontes sem serifa (sans-serif):
+
+#"Arial" (ou "Helvetica" em alguns sistemas)
+#"Verdana"
+#"Tahoma"
+#Fontes monoespaçadas:
+
+#"Courier" (ou "Courier New" em alguns sistemas)
+#"Fixedsys" (fonte monoespaçada padrão no Windows)
+#Fontes cursive (manuscritas) e fantasy (fantasia):
+
+#"Comic Sans MS"
+#"Zapfino" (somente em sistemas macOS)
+
+#Fontes adicionais:
+
+#"Lucida" (por exemplo, "Lucida Grande", "Lucida Sans Unicode")
+#"Century Schoolbook"
+#"Bookman"
+#"Palatino"
+#"URW Chancery L"
+#"URW Gothic L"
+#"URW Palladio L"
+
 def centralizar(altura,largura,titulo,cor):
         janela = Tk()
         titulo = janela.title(titulo)
