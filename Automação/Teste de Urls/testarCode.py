@@ -1,7 +1,9 @@
+import requests
 import openpyxl
 import aiohttp
 import asyncio
 from openpyxl.chart import BarChart, Reference
+from tqdm import tqdm
 
 # Função para verificar o status da URL e retornar o resultado do teste
 async def verificar_url(session, url):
@@ -30,14 +32,23 @@ async def main():
             # Lista para armazenar os resultados dos testes
             resultados = []
 
+            # Obter o total de URLs a serem testadas
+            total_urls = sum(1 for _ in arquivo)
+
+            # Reiniciar o ponteiro do arquivo para ler novamente
+            arquivo.seek(0)
+
             # Criar uma lista de tarefas assíncronas para processar as URLs em paralelo
             tasks = []
             for url in arquivo:
                 url = url.strip()  # Remover espaços em branco no início e no fim da URL
                 tasks.append(verificar_url(session, url))
 
-            # Executar as tarefas assíncronas e aguardar os resultados
-            resultados = await asyncio.gather(*tasks)
+            # Criar uma barra de progresso
+            with tqdm(total=total_urls, desc="Testando URLs") as pbar:
+                # Executar as tarefas assíncronas e aguardar os resultados
+                resultados = await asyncio.gather(*tasks)
+                pbar.update(len(resultados))
 
             # Iterar sobre as URLs e gravar os resultados no arquivo XLSX
             arquivo.seek(0)  # Reiniciar o ponteiro do arquivo para ler novamente

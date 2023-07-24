@@ -1,6 +1,6 @@
 https://www.google.com
-https://www.facebook.com
+https://www.facebook.comm
 https://www.wikipedia.org
-https://www.example.com
+https://www.example.comm
 https://www.microsoft.com
 https://realpython.comm
