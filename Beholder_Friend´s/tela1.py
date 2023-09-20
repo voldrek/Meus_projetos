@@ -90,6 +90,7 @@ def tela_cadastro():
 
     b_voltar = Button(frame_baixo,command=voltar, text='Voltar' ,width=10,height=2, anchor=NW , font=('Ivy 8 bold') ,bg=co2 , fg=co1, relief=RAISED, overrelief=RIDGE)
     b_voltar.place(x=10 , y=190)
+    
 def tela_login():
     def verifica_senha():
         nome = e_nome.get()
@@ -158,6 +159,7 @@ def tela_login():
 
     b_cadastro = Button(frame_baixo,command=tela_cadastro, text='Cadastro' ,width=10,height=2, anchor=NW , font=('Ivy 8 bold') ,bg=co2 , fg=co1, relief=RAISED, overrelief=RIDGE)
     b_cadastro.place(x=200 , y=180)
+    
 def tela_prinpal(nome_usuario):
     login.geometry('500x300')
     login.resizable(width=False, height=False)
